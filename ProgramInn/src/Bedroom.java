@@ -3,11 +3,16 @@ public class Bedroom {
 
 	public String name;
 	public String email;
-	public int room;
 	
 
 	Bedroom() {
 		
+	}
+
+	
+	public Bedroom(String name, String email) {
+		this.name = name;
+		this.email = email;
 	}
 
 
@@ -29,14 +34,6 @@ public class Bedroom {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	}
 	
-	public int getRoom() {
-		return room;
-	}
 
-
-	public void setRoom(int room) {
-		this.room = room;
-	}
-
-}

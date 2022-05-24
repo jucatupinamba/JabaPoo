@@ -10,11 +10,12 @@ public class ProgramInn {
 		
 		System.out.println("Quantos quartos para alugar?");
 		int n = sc.nextInt();
-		int i = 0, empty = 0;
-		Bedroom[] vect = new Bedroom[n];
+		int i = 0;
+		Bedroom[] vect = new Bedroom[10];
+		int room;
 		
 		
-		for ( i=0; i<vect.length; i++) {
+		for ( i=0; i<n; i++) {
 						
 			
 			sc.nextLine();
@@ -22,18 +23,15 @@ public class ProgramInn {
 			String name = sc.nextLine();
 			System.out.print("Digite seu email: ");
 			String email = sc.nextLine();
-			System.out.print("Qual quarto deseja? (1<10)");
-			int room = sc.nextInt();
-			vect[i]= Bedroom();
-		
+			System.out.print("Qual quarto deseja? /n(1<10)");
+			room = sc.nextInt();
+			vect[room]= new Bedroom(name,email);
+			sc.nextLine();
 		}
 		for (i=0; i<n; i++) {
-		System.out.println(vect[i]);
-		System.out.printf("Nome:"); //Imprimir relação de dados
-		
+			if(vect[i] != null) {
+			System.out.println(i + ":" + vect[i]);
 		}
-		System.out.println("Quartos vazio " + empty ); // relação quartos vazios
-		sc.close();
 		}
-	
+	}
 }
