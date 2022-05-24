@@ -28,7 +28,7 @@ public class ProgramInn {
 			vect[room]= new Bedroom(name,email);
 			sc.nextLine();
 		}
-		for (i=0; i<n; i++) {
+		for (i=0; i<10; i++) {
 			if(vect[i] != null) {
 			System.out.println(i + ":" + vect[i]);
 		}
