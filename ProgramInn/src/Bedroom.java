@@ -1,18 +1,18 @@
 
 public class Bedroom {
 
-	public String name;
-	public String email;
-	
+	private String name;
+	private String email;
 
-	Bedroom() {
-		
-	}
 
-	
 	public Bedroom(String name, String email) {
 		this.name = name;
 		this.email = email;
+	}
+
+
+	public Bedroom() {
+	
 	}
 
 
@@ -34,6 +34,8 @@ public class Bedroom {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	}
+}
+
+
 	
 

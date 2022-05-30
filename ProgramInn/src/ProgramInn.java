@@ -1,37 +1,45 @@
-import java.util.Locale;
+
+import java.text.ParseException;
 import java.util.Scanner;
+
+/*
+ * Programa de aluguel de quartos. 10 quartos com vetores iniciados.
+ * Seleção de quarto de acordo com vetor disponível.
+ */
 
 public class ProgramInn {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
-		Locale.setDefault(Locale.US);
+	
 		Scanner sc = new Scanner(System.in);
+	
+		Bedroom[] lista = new Bedroom[10];
 		
-		System.out.println("Quantos quartos para alugar?");
-		int n = sc.nextInt();
-		int i = 0;
-		Bedroom[] vect = new Bedroom[10];
-		int room;
+		System.out.println("Quantos quartos deseja alugar? ");
+		int quantQuarto = sc.nextInt();
 		
-		
-		for ( i=0; i<n; i++) {
-						
+		for (int i=0; i<quantQuarto; i++) {
 			
+			System.out.println();
+			System.out.println("Digite nome: ");
 			sc.nextLine();
-			System.out.print("Digite seu nome: ");
 			String name = sc.nextLine();
-			System.out.print("Digite seu email: ");
+			System.out.println("Digite o email: ");
 			String email = sc.nextLine();
-			System.out.print("Qual quarto deseja? /n(1<10)");
-			room = sc.nextInt();
-			vect[room]= new Bedroom(name,email);
-			sc.nextLine();
+			System.out.println("Qual quarto deseja alugar? (0<9) ");
+			int numero = sc.nextInt();
+			lista[numero] = new Bedroom(name, email);
 		}
-		for (i=0; i<10; i++) {
-			if(vect[i] != null) {
-			System.out.println(i + ":" + vect[i]);
+		
+		sc.close();
+		
+		for (int i=0; i<10 ; i++) {
+			if(lista[i] != null) {
+				System.out.println();
+				System.out.println(lista[i]); //corrigir a saída de dados
+					
 		}
-		}
+	}
 	}
 }

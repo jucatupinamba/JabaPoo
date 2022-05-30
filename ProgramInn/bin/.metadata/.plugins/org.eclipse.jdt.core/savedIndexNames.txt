@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+/home/juca/eclipse-workspace/ProgramInn/src/.metadata/.plugins/org.eclipse.jdt.core
