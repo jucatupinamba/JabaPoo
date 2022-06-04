@@ -15,10 +15,12 @@ public class ProgramInn {
 		Scanner sc = new Scanner(System.in);
 	
 		Bedroom[] lista = new Bedroom[10];
-		
+
+		// Captação de dados, quantidade de quartos para alugar.
 		System.out.println("Quantos quartos deseja alugar? ");
 		int quantQuarto = sc.nextInt();
-		
+
+		// lógica de captação de dados do usuário, vinculado à quantidade de quartos
 		for (int i=0; i<quantQuarto; i++) {
 			
 			System.out.println();
@@ -33,11 +35,12 @@ public class ProgramInn {
 		}
 		
 		sc.close();
-		
+
+		//lógica de saída de dados; * Está imprimindo vetores vazios
 		for (int i=0; i<10 ; i++) {
 			if(lista[i] != null) {
 				System.out.println();
-				System.out.println(lista[i]); //corrigir a saída de dados
+				System.out.println(lista[i]);
 					
 		}
 	}

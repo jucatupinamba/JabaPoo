@@ -1,0 +1,57 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fb5110bb0ad, pid=104368, tid=104385
+#
+# JRE version: OpenJDK Runtime Environment (11.0.15+10) (build 11.0.15+10-Ubuntu-0ubuntu0.20.04.1)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.15+10-Ubuntu-0ubuntu0.20.04.1, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x30ad]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E" (or dumping to /home/juca/eclipse-workspace/ProgramInn/core.104368)
+#
+# If you would like to submit a bug report, please visit:
+#   Unknown
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:46189 -javaagent:/home/juca/eclipse/jee-2021-06/eclipse/configuration/org.eclipse.osgi/410/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 ProgramInn
+
+Host: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz, 4 cores, 3G, Ubuntu 20.04.4 LTS
+Time: Tue May 31 14:52:25 2022 -03 elapsed time: 27453.215695 seconds (0d 7h 37m 33s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fb50c12d800):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=104385, stack(0x00007fb4ec02e000,0x00007fb4ec12f000)]
+
+Stack: [0x00007fb4ec02e000,0x00007fb4ec12f000],  sp=0x00007fb4ec12c1f0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x30ad]
+C  [libjimage.so+0x3ca2]
+C  [libjimage.so+0x4191]  JIMAGE_FindResource+0xf1
+V  [libjvm.so+0x5baef1]
+V  [libjvm.so+0x5bd511]
+V  [libjvm.so+0xdf4bbd]
+V  [libjvm.so+0xdf375a]
+V  [libjvm.so+0xdf5cfb]
+V  [libjvm.so+0x66d46e]
+V  [libjvm.so+0x861206]
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@11.0.15
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x869cc4]
+V  [libjvm.so+0x868d02]
+V  [libjvm.so+0xbd444e]
+V  [libjvm.so+0xe2b44f]
+V  [libjvm.so+0xe27e70]
+V  [libjvm.so+0xbe65f6]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@11.0.15
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007fb503825e18
+
+Register to memory mapping:
+
+RAX=
