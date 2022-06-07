@@ -16,7 +16,9 @@ public class ProgramConta {
 
         System.out.println("Qual conta deseja abrir?");
         System.out.println("Para conta conrrente digite - cc; Para conta poupança digite - cp: ");
+        sc.nextLine();
         conta.setTipo(sc.nextLine());
+
 
         System.out.println("Qual o nome do usuário da conta? ");
         conta.setDono(sc.nextLine());
