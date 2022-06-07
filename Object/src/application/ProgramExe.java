@@ -37,8 +37,7 @@ public class ProgramExe {
 		//Método de depósito utilizando os princípios de encapsulamento
 		System.out.println();
 		System.out.print("Enter a deposit value: ");
-		double depositValue = sc.nextDouble();
-		account.deposit(depositValue);
+		double depositValue = account.deposit(sc.nextDouble());
 		//Saída de dados - impressão do estado atual do objeto ProductExe
 		System.out.println("Updated account data:");
 		System.out.println(account);
