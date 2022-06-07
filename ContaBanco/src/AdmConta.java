@@ -1,7 +1,7 @@
 public class AdmConta {
 
     public int numConta;
-    protected Integer tipo;
+    protected int tipo;
     private String dono;
     private double saldo;
     private boolean status;
@@ -30,31 +30,41 @@ public class AdmConta {
             setStatus(false);
         }
     }
-    public double deposito(double depositoConta){ // lógica com princípios de encapsulamento para depósito
-        return setSaldo(getSaldo() + depositoConta);
+    public void deposito(double depositoConta){ // lógica com princípios de encapsulamento para depósito
+        if (isStatus()) {
+            setSaldo(getSaldo() + depositoConta);
+        }
+        else{
+            toStringErro();
+        }
     }
 
     public void sacar(double sacar){  // evitar saque com saldo zerado
-     if(getSaldo() > 0){
-         setSaldo(getSaldo() - sacar);
-     }
-     else{
-         System.out.println("Você não possui saldo para saque.");
-     }
+         if(isStatus()) {
+             if (getSaldo() > 0) {
+                 setSaldo(getSaldo() - sacar);
+             } else {
+                 System.out.println("Você não possui saldo para saque.");
+             }
+         }
+         else{
+             toStringErro();
+         }
     }
 
     public void  pagarMensal(double mensalidade){
         if(isStatus()) {
             if (getTipo() == 1) {
                 setSaldo(getSaldo() - 12.00); // taxa conta corrente
-            } else {
+            }
+            else if(getTipo() == 2){
                 setSaldo(getSaldo() - 20.00); // taxa conta poupança
             }
         }
         else{
-            System.out.println("Conta fechada");
+            toStringErro();
         }
-        }
+    }
 
     public String toString(){
         return "Conta Nº: "
@@ -67,6 +77,10 @@ public class AdmConta {
                 + getSaldo()
                 + " Conta ativa: "
                 + isStatus();
+    }
+
+    public String toStringErro(){ // método String para casos de erro
+        return "Conta inexistente";
     }
 
     public int getNumConta() {
