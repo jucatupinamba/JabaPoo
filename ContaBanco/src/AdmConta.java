@@ -1,21 +1,40 @@
 public class AdmConta {
 
-    public int NumConta;
+    public int numConta;
     protected String tipo;
     private String dono;
     private double saldo;
     private boolean status;
 
-    public int getNumConta() {
-        return NumConta;
-    }
-
     public AdmConta(){
 
     }
+    public void abrirConta(){
+        setStatus(true);
+    }
 
-    public void setNumConta(int NumConta) {
-        this.NumConta = NumConta;
+    public void fecharConta(){
+        setStatus(false);
+    }
+
+    public double deposito(double depositoConta){
+        return saldo += depositoConta;
+    }
+
+    public double sacar(double saqueConta){
+        return saldo -= saqueConta;
+    }
+
+    public double pagarMensal(){
+        return saldo - 12.00;
+    }
+
+    public int getNumConta() {
+        return numConta;
+    }
+
+    public void setNumConta(int numConta) {
+        this.numConta = numConta;
     }
 
     public String getTipo() {
@@ -38,10 +57,6 @@ public class AdmConta {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
     public boolean isStatus() {
         return status;
     }
@@ -50,7 +65,4 @@ public class AdmConta {
         this.status = status;
     }
 
-    public void abrirConta(){  //continuar à partir deste ponto;
-
-    }
 }
