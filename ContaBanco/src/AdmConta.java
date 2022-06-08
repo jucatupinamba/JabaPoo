@@ -33,6 +33,7 @@ public class AdmConta {
     public void deposito(double depositoConta){ // lógica com princípios de encapsulamento para depósito
         if (isStatus()) {
             setSaldo(getSaldo() + depositoConta);
+            System.out.println("Depósito realizado na conta de " + getDono());
         }
         else{
             toStringErro();
@@ -45,6 +46,7 @@ public class AdmConta {
                  System.out.println("Você não possui saldo para saque.");
              } else {
                  setSaldo(getSaldo() - sacar);
+                 System.out.println("Saque realizado na conta de " + getDono());
              }
          }
          else{
@@ -68,6 +70,7 @@ public class AdmConta {
                 }
                 else{
                     setSaldo(getSaldo() - 20.00); // taxa conta poupança
+                    System.out.println("Pagamento realizado");
                 }
             }
         }
@@ -77,16 +80,11 @@ public class AdmConta {
     }
 
     public String toString(){
-        return "Conta Nº: "
-                + getNumConta()
-                + " Tipo de Conta: "
-                + getTipo()
-                + " Nome: "
-                + getDono()
-                + " Saldo: R$ "
-                + getSaldo()
-                + " Conta ativa: "
-                + isStatus();
+        return "Conta: " + getNumConta() + "\n"
+                + "Tipo: " + getTipo() + "\n"
+                + "Proprietário: " + getDono() + "\n"
+                + "Saldo: " + getSaldo() + "\n"
+                + "Conta ativa: " + isStatus();
     }
 
     public String toStringErro(){ // método String para casos de erro

@@ -85,7 +85,14 @@ public class ProgramConta {
                 System.out.println(conta.toStringErro());
             }
         }
-        System.out.println(conta.toString());
+        System.out.println("Digite 1 para saber o status da conta: ");
+        int status = sc.nextInt();
+            if(status == 1){
+                System.out.println(conta.toString());
+            }
+            else{
+                System.out.println("Seja bem vindo: " + conta.getDono());
+            }
         }
     }
 
