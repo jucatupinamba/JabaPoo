@@ -41,10 +41,10 @@ public class AdmConta {
 
     public void sacar(double sacar){  // evitar saque com saldo zerado
          if(isStatus()) {
-             if (getSaldo() > 0) {
-                 setSaldo(getSaldo() - sacar);
-             } else {
+             if (getSaldo() <= sacar) {
                  System.out.println("Você não possui saldo para saque.");
+             } else {
+                 setSaldo(getSaldo() - sacar);
              }
          }
          else{
@@ -55,10 +55,20 @@ public class AdmConta {
     public void  pagarMensal(double mensalidade){
         if(isStatus()) {
             if (getTipo() == 1) {
-                setSaldo(getSaldo() - 12.00); // taxa conta corrente
+                if(mensalidade > getSaldo()){
+                    System.out.println("Saldo insuficiente");
+                }
+                else {
+                    setSaldo(getSaldo() - 12.00); // taxa conta corrente
+                }
             }
             else if(getTipo() == 2){
-                setSaldo(getSaldo() - 20.00); // taxa conta poupança
+                if(mensalidade < getSaldo()) {
+                    System.out.println("Saldo insuficiente"); //entendo que não se deve ter String em método;
+                }
+                else{
+                    setSaldo(getSaldo() - 20.00); // taxa conta poupança
+                }
             }
         }
         else{
