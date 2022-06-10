@@ -9,23 +9,23 @@ public class Lutador {
     private int vitoria, empate, derrota;
 
     public Lutador(String no, String na, int id, double al, double pe,
-                        int vi, int em, int de){
+                        int vi,  int de, int em){
         setNome(no);
         setNacionalidade(na);
         setIdade(id);
         setAltura(al);
         setPeso(pe);
-        setCategoria();
         setVitoria(vi);
-        setEmpate(em);
         setDerrota(de);
+        setEmpate(em);
     }
     public void apresentacao(){
         System.out.println("Lutador: " + getNome());
         System.out.println("Origem: " + getNacionalidade());
         System.out.println(getIdade() + " anos");
-        System.out.println(getAltura() + " m de altura");
-        System.out.println("Pesando: " + getPeso() + "Kg");
+        System.out.printf("%.2f m de altura %n", getAltura());
+        System.out.printf("Pesando: %.2f Kg %n", getPeso());
+        System.out.println("Categoria: Peso " + getCategoria());
         System.out.println("Ganhou: " + getVitoria());
         System.out.println("Perdeu: " + getDerrota());
         System.out.println("Empatou: " + getEmpate());
@@ -33,10 +33,10 @@ public class Lutador {
 
     public void status(){
         System.out.println(getNome());
-        System.out.println("é um peso " + getCategoria());
-        System.out.println(getVitoria() + "vitórias");
-        System.out.println(getDerrota() + "derrotas");
-        System.out.println(getEmpate() + "empates");
+        System.out.println("É um peso " + getCategoria());
+        System.out.println(getVitoria() + " vitórias");
+        System.out.println(getDerrota() + " derrotas");
+        System.out.println(getEmpate() + " empates");
     }
 
     public void ganharLuta(){
@@ -103,7 +103,7 @@ public class Lutador {
             categoria = "Leve";
         }
         else if(peso <= 83.90){
-            categoria = "Grande";
+            categoria = "Médio";
         }
         else if (peso > 83.90 && peso < 120.00){
             categoria = "Pesado";
