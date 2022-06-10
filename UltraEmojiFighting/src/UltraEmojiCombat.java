@@ -1,5 +1,9 @@
 import java.util.Scanner;
-
+    /*
+        Programa de gerenciamento de lutadores e lutas
+        Desenvolvimento de POO - encapsulamento
+        Agregação entre objetos com Java
+     */
 public class UltraEmojiCombat {
     public static void main (String [] args){
         Scanner sc = new Scanner(System.in);
@@ -11,6 +15,10 @@ public class UltraEmojiCombat {
         l[4] = new Lutador ("UFOCobol", "Brasil", 37, 1.70f, 119.3f, 5, 4, 3);
         l[5] = new Lutador("Nerdaart", "EUA", 30, 1.81f, 105.7f, 12, 2, 4);
 
-        l[4].apresentacao();
+        Luta UEC01 = new Luta();
+        UEC01.marcarLuta(l[0], l[1]);  // Método marcar luta coloca condições para a luta acontecer
+        UEC01.lutar();  // Teste dos métodos
+        l[0].status();
+        l[1].status();
     }
 }
