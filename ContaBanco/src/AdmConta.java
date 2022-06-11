@@ -19,7 +19,7 @@ public class AdmConta {
         }
     }
 
-    public void fecharConta() { // lógica para fechar conta, desde que o saldo esteja zerado
+    public void fecharConta() {                   // lógica para fechar conta, desde que o saldo esteja zerado
         if (saldo < 0) {
             System.out.println("Você está com saldo devedor. ");
         }
@@ -30,7 +30,7 @@ public class AdmConta {
             setStatus(false);
         }
     }
-    public void deposito(double depositoConta){ // lógica com princípios de encapsulamento para depósito
+    public void deposito(double depositoConta){        // lógica com princípios de encapsulamento para depósito
         if (isStatus()) {
             setSaldo(getSaldo() + depositoConta);
             System.out.println("Depósito realizado na conta de " + getDono());
@@ -40,9 +40,9 @@ public class AdmConta {
         }
     }
 
-    public void sacar(double sacar){  // evitar saque com saldo zerado
+    public void sacar(double sacar){
          if(isStatus()) {
-             if (getSaldo() <= sacar) {
+             if (getSaldo() <= sacar) {               //lógica valor do saque não pode ser maior que o saldo;
                  System.out.println("Você não possui saldo para saque.");
              } else {
                  setSaldo(getSaldo() - sacar);
