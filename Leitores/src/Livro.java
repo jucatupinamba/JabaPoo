@@ -1,13 +1,29 @@
-public class Livro {
+public class Livro implements Publicacao {
     //Atributos
     private String titulo, autor;
     private int totPaginas, pagAtual;
     private boolean aberto;
     private Pessoa leitor;
-    //Métodos Públicos
-    public void detalhes(){
 
+    public Livro(String titulo, String autor, int totPaginas, Pessoa leitor) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.totPaginas = totPaginas;
+        this.leitor = leitor;
     }
+
+    //Métodos Públicos
+    public String detalhes() {
+        return "Livro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", totPaginas=" + totPaginas +
+                ", pagAtual=" + pagAtual +
+                ", aberto=" + aberto +
+                ", leitor=" + leitor +
+                '}';
+    }
+
     //Métodos Especiais
 
     public String getTitulo() {
@@ -56,5 +72,31 @@ public class Livro {
 
     public void setLeitor(Pessoa leitor) {
         this.leitor = leitor;
+    }
+
+
+    @Override
+    public void abrir() {
+
+    }
+
+    @Override
+    public void fechar() {
+
+    }
+
+    @Override
+    public void folhear() {
+
+    }
+
+    @Override
+    public void avancarPag() {
+
+    }
+
+    @Override
+    public void voltarPag() {
+
     }
 }

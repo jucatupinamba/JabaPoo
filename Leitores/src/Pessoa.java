@@ -6,7 +6,7 @@ public class Pessoa {
     //Métodos Públicos
 
     public void fazerAniver(){
-
+        this.setIdade(getIdade() + 1);
     }
     //Méstodos Especiais
 
@@ -34,4 +34,5 @@ public class Pessoa {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+
 }
