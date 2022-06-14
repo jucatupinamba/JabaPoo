@@ -30,17 +30,17 @@ public class ProgramInn {
 			System.out.println("Digite o email: ");
 			String email = sc.nextLine();
 			System.out.println("Qual quarto deseja alugar? (0<9) ");
-			int numero = sc.nextInt();
-			lista[numero] = new Bedroom(name, email);
+			int quarto = sc.nextInt();
+			lista[quarto] = new Bedroom(name, email, quarto);
 		}
 		
 		sc.close();
 
-		//lógica de saída de dados; * Está imprimindo vetores vazios
+		//lógica de saída de dados; 
 		for (int i=0; i<10 ; i++) {
 			if(lista[i] != null) {
 				System.out.println();
-				System.out.println(lista[i]);
+				System.out.println(lista[i].toString());
 					
 		}
 	}
