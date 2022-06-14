@@ -5,23 +5,25 @@ public class Livro implements Publicacao {
     private boolean aberto;
     private Pessoa leitor;
 
+    //Método Construtor
     public Livro(String titulo, String autor, int totPaginas, Pessoa leitor) {
         this.titulo = titulo;
         this.autor = autor;
+        this.aberto = false;
+        this.pagAtual = 0;
         this.totPaginas = totPaginas;
         this.leitor = leitor;
     }
 
     //Métodos Públicos
     public String detalhes() {
-        return "Livro{" +
-                "titulo='" + titulo + '\'' +
-                ", autor='" + autor + '\'' +
-                ", totPaginas=" + totPaginas +
-                ", pagAtual=" + pagAtual +
-                ", aberto=" + aberto +
-                ", leitor=" + leitor +
-                '}';
+        return "Livro" + '\n' +
+                "Titulo = " + titulo + '\n' +
+                "Autor = " + autor + '\n' +
+                "Total de Paginas = " + totPaginas + '\n' +
+                "Página Atual = " + pagAtual + '\n' +
+                "Aberto = " + aberto + '\n' +
+                "Leitor = " + leitor.getNome();
     }
 
     //Métodos Especiais
@@ -77,26 +79,31 @@ public class Livro implements Publicacao {
 
     @Override
     public void abrir() {
-
+        this.aberto = true;
     }
 
     @Override
     public void fechar() {
-
+        this.aberto = false;
     }
 
     @Override
-    public void folhear() {
-
+    public void folhear(int p) {
+        if (p > this.getTotPaginas()){
+            this.pagAtual = 0;
+        }
+        else {
+            this.pagAtual = p;
+        }
     }
 
     @Override
     public void avancarPag() {
-
+        this.pagAtual++;
     }
 
     @Override
     public void voltarPag() {
-
+        this.pagAtual--;
     }
 }
