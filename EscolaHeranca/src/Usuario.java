@@ -1,4 +1,4 @@
-public class Usuario {
+public abstract class Usuario {
     private String nome;
     private int idade;
     private char sexo;
@@ -34,8 +34,8 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario" +
-                "Nome: " + nome + '\n' +
-                "Idade: " + idade + '\n' +
-                "Sexo: " + sexo + '\n';
+                "Nome: " + getNome() + '\n' +
+                "Idade: " + getIdade() + '\n' +
+                "Sexo: " + getSexo() + '\n';
     }
 }

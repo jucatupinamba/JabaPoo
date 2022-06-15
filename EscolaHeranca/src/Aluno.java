@@ -1,16 +1,16 @@
 public class Aluno extends Usuario{
-    private boolean matricula;
+    private int matricula;
     private String curso;
 
-    public void alterarMatr(){
-       this.matricula = ! matricula;
+    public void pagarMensalidade(){
+       System.out.println("Pagando mensalidade do(a) aluno " + getNome());
     }
 
-    public boolean isMatricula() {
+    public int getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(boolean matricula) {
+    public void setMatricula(int matricula) {
         this.matricula = matricula;
     }
 

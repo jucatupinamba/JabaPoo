@@ -1,29 +1,33 @@
-import java.util.Scanner;
-
 public class ProgramaEscola {
+    /*
+    Programa desenvolvido e melhorado para trabalhar os conceitos de herança
+    Foi utilizado a rede de usuários de um sistema de escola.
+     */
     public static void main (String [] args){
-        Usuario p1 = new Usuario();
-        Aluno p2 = new Aluno();
-        Funcionario p3 = new Funcionario();
-        Professor p4 = new Professor();
+        Visitante v1 = new Visitante();
+        v1.setNome("Juca");
+        v1.setIdade(35);
+        v1.setSexo('M');
+       System.out.println(v1.toString());
 
-        p1.setNome("Pedro");
-        p2.setNome("Maria");
-        p3.setNome("Claudio");
-        p4.setNome("Fabiana");
+        Aluno a1 = new Aluno();
+        a1.setNome("Keel");
+        a1.setIdade(24);
+        a1.setSexo('B');
+        System.out.println(a1.toString());
+        a1.pagarMensalidade();
 
-        p2.setCurso("Informática");
-        p4.setSalario(2500.75);
-        p3.setSetor("Estoque");
+        System.out.println();
 
-        p4.receberAum();
-        p2.alterarMatr();
-        p3.mudarTrabalho();
 
-        System.out.println(p1.toString());
-        System.out.println(p2.toString());
-        System.out.println(p3.toString());
-        System.out.println(p4.toString());
+        Bolsista b1 = new Bolsista();
+        b1.setNome("Juca Boladão");
+        b1.setIdade(16);
+        b1.setSexo('M');
+        System.out.println(b1.toString());
+        b1.pagarMensalidade();
+
+
 
     }
 }
