@@ -2,8 +2,8 @@ public class Agendamento extends Servico{
     private Integer calendario;            //Pesquisar import calendar
     private double horario;                //Pesquisar import time
 
-    public Agendamento(String tipo, double tempo, double valor, Integer calendario, double horario) {
-        super(tipo, tempo, valor);
+    public Agendamento() {
+        super(getTipo(), tempo, valor);
         this.calendario = calendario;
         this.horario = horario;
     }
@@ -22,5 +22,14 @@ public class Agendamento extends Servico{
 
     public void setHorario(double horario) {
         this.horario = horario;
+    }
+
+    @Override
+    public String toString() {
+        return "Agendamento: " +
+                "Nome: " + getNome() +
+                "Telefone: " + getTelefone() +
+                "Data: " + calendario +
+                "Horario: " + horario;
     }
 }

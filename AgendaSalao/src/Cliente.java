@@ -2,7 +2,7 @@ public abstract class Cliente {
     private String nome;
     private int telefone;
 
-    public Cliente(String nome, int telefone) {
+    public Cliente() {
         this.nome = nome;
         this.telefone = telefone;
     }
