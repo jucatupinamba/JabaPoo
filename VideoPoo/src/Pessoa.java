@@ -4,11 +4,11 @@ public abstract class Pessoa {
     protected char sexo;
     protected int experiência;
 
-    public Pessoa(String nome, int idade, char sexo, int experiência) {
+    public Pessoa(String nome, int idade, char sexo) {
         this.nome = nome;
         this.idade = idade;
         this.sexo = sexo;
-        this.experiência = experiência;
+        this.experiência = 0;
     }
 
     protected void ganharExp(){
@@ -47,4 +47,12 @@ public abstract class Pessoa {
         this.experiência = experiência;
     }
 
+    @Override
+    public String toString() {
+        return "Pessoa" +
+                "Nome: " + nome + '\n' +
+                "Idade: " + idade + '\n' +
+                "Sexo: " + sexo + '\n' +
+                "Experiência: " + experiência;
+    }
 }
