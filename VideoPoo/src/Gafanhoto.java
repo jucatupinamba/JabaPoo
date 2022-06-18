@@ -9,7 +9,7 @@ public class Gafanhoto extends Pessoa{
     }
 
     public void viuMaisUm(){
-
+        totAssistido++;
     }
 
     public String getLogin() {
