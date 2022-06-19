@@ -12,6 +12,12 @@ public class ProgramaVideo {
 
         Visualizacao vis[] = new Visualizacao[5];
         vis[0] = new Visualizacao(g[0], v[0]);
+        vis[0].avaliar();   //ação da sobrecarga
+        System.out.println(vis[0].toString());
+
+
+        vis[0] = new Visualizacao(g[0], v[1]);
+        vis[0].avaliar(35.0f);  //diferentes funções para métodos iguais com diferentes assinaturas
         System.out.println(vis[0].toString());
     }
 }
