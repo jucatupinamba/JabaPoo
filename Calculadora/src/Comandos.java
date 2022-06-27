@@ -48,8 +48,7 @@ public class Comandos {
            case 4: resultado = x / y;
            break;
 
-           default: System.out.println("Número inválido!");
-                    resultado = 0;
+           default: throw new RuntimeException("Número inválido!");
 
        }
         this.resultado = resultado;

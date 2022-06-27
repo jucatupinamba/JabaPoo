@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-//App Calculadora simples utilizando os princípios da POO.
-
 public class CalculadoraApp {
     public static void main (String [] args){
 
@@ -21,12 +18,15 @@ public class CalculadoraApp {
         operacao.setOperacao(sc.nextInt());
 
         System.out.println("Digite o número: ");
-
         operacao.setY(sc.nextDouble());
+        try {
+            operacao.setResultado(operacao.getOperacao());
+            System.out.println("Resultado: " + operacao.getResultado());
+        }
+        catch(RuntimeException e){
+            System.out.println(e.getMessage());
+        }
 
-        operacao.setResultado(operacao.getOperacao());
-
-        System.out.println("Resultado: " + operacao.getResultado());
 
     }
 }
