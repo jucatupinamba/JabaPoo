@@ -1,7 +1,7 @@
 public abstract class Produto {
     public String nome;
     public String tipo;
-    public Integer quantidade;
+     public double preco;
 
     public String getNome() {
         return nome;
@@ -19,18 +19,12 @@ public abstract class Produto {
         this.tipo = tipo;
     }
 
-    public Integer getQuantidade() {
-        return quantidade;
+    public double getPreco() {
+        return preco;
     }
 
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
-    public String toString() {
-        return "Produto" + "\n" +
-                "Nome: " + getNome() + '\'' +
-                "Tipo: " + getTipo() + '\'' +
-                "Quantidade: " + getQuantidade();
-    }
 }
