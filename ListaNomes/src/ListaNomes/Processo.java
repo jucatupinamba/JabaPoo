@@ -1,2 +1,4 @@
-package ListaNomes;public class Processo {
+package ListaNomes;
+
+public class Processo {
 }
