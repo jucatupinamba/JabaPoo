@@ -9,11 +9,11 @@ public class Churrasco extends Alimentos{
         setQuantidade(quantidade);
     }
 
-    public void fazerPedido(){                   //abaixo exemplo de polimorfismo de sobrecarga
-
+    public void fazerPedido(Buffet buffet){                   //abaixo exemplo de polimorfismo de sobrecarga
+           buffet.setQuantidade(getQuantidade() + 1);  //adiciona um item ao pedido Buffet
     }
-    public void fazerPedido(int quantidade){
-        setQuantidade(getQuantidade()+1);          //adiciona um item ao pedido
+    public void fazerPedido(int quantidade) {
+        setQuantidade(getQuantidade() + 1);          //adiciona um item ao pedido churrasco
     }
 
     public int getQuantidade() {
@@ -22,6 +22,11 @@ public class Churrasco extends Alimentos{
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public double conta(){
+        return setPreco(getQuantidade() * getPreco());
+
     }
 
     public String pedido() {

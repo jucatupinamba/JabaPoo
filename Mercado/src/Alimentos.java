@@ -1,4 +1,4 @@
-public class Alimentos extends Produto {
+public class Alimentos extends Produto {  //Classe filha de produto
     private String servir;
 
     public String getServir() {

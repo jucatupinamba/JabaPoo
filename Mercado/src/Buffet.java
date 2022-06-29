@@ -1,7 +1,10 @@
-public class Buffet extends Alimentos {
+public class Buffet extends Alimentos {        /*Classe filha de Alimentos
+                                                  Pega métodos emprestados da classe mãe e ascendente
+                                                  como metodos getNome, setTipo da superclasse Produto.
+                                                   */
     private int quantidade;
     private boolean taxaDesperdicio;
-
+        //Método Construtor
     public Buffet(String nome, String tipo, double preco, String servir, int quantidade){
         setNome(nome);
         setTipo(tipo);
@@ -10,20 +13,15 @@ public class Buffet extends Alimentos {
         setQuantidade(quantidade);
     }
 
-    public void Conta(){
-        getNome();
-        getTipo();
-        getPreco();
-        getQuantidade();
-        isTaxaDesperdicio();
-
-    }
-
     public void novoPedido(){
         getNome();
         getTipo();
         getPreco();
         setQuantidade(quantidade + 1);
+    }
+
+    public double conta(){
+        return setPreco(getQuantidade() * getPreco());
     }
 
     public int getQuantidade() {

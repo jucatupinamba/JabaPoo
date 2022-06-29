@@ -1,19 +1,18 @@
-public final class Cliente extends Produto {
+public final class Cliente extends Produto {      //Classe filha de Produto
     private int mesa;
-    private String pagamento;
 
     public Cliente(String nome, int mesa){
-        setNome(nome);
+        setNome(nome);      //a classe mãe "empresta" métodos (setNome) para trabalho na classe filha
         setMesa(mesa);
     }
 
-    public String pedidoChurras(Churrasco churras) {
+    public String pedidoChurras(Churrasco churras) {        //Método pedido churrasco
      return "Nome: " + getNome() + '\n' +
              "Mesa: " + getMesa() + '\n' +
              churras.pedido();
     }
 
-    public String pedidoBuffet(Buffet bf) {
+    public String pedidoBuffet(Buffet bf) {                 //Método pedido buffet
         return "Nome: " + getNome() + '\n' +
                 "Mesa: " + getMesa() + '\n' +
                 bf.pedido();
@@ -25,7 +24,7 @@ public final class Cliente extends Produto {
         buffet.novoPedido();
     }
 
-    public String cardapio(Churrasco churras){
+    public String cardapio(Churrasco churras){                  //Método para cardápio do churrasco;
         return "Nome: " + churras.getNome() + '\n' +
                 "Tipo: " + churras.getTipo() + '\n' +
                 "Preço: " + churras.getPreco() + '\n' +
@@ -33,7 +32,7 @@ public final class Cliente extends Produto {
                 "Quantidade: " + churras.getQuantidade();
     }
 
-    public String fecharContaChurras(Churrasco ch){
+    public String fecharContaChurras(Churrasco ch){     //Método fechar conta do Churrasco
         return "Nome: " + getNome() + '\n' +
                 "Tipo: " + ch.getTipo() + '\n' +
                 "Quantidade: " + ch.getQuantidade() + '\n' +
@@ -41,11 +40,17 @@ public final class Cliente extends Produto {
 
     }
 
-    public String fecharContaBuffet(Buffet bf){
+    public String fecharConta(Buffet bf, Churrasco ch){   //necessário revisão, deixar impressão mais amigável
         return "Nome: " + getNome() + '\n' +
+                "Mesa: " + getMesa() + '\n' +
+                "Produto: " + bf.getNome() + "\n" +
                 "Tipo: " + bf.getTipo() + '\n' +
                 "Quantidade: " + bf.getQuantidade() + '\n' +
-                "Total: " + bf.getPreco();
+                "\n Produto: " + ch.getNome() + "\n" +
+                "Tipo: " + ch.getTipo() + '\n' +
+                "Quantidade: " + bf.getQuantidade() + '\n' +
+                "Total: R$ " + setPreco(bf.conta() + ch.conta());
+
     }
 
     public int getMesa() {
@@ -56,11 +61,4 @@ public final class Cliente extends Produto {
         this.mesa = mesa;
     }
 
-    public String getPagamento() {
-        return pagamento;
-    }
-
-    public void setPagamento(String pagamento) {
-        this.pagamento = pagamento;
-    }
 }
