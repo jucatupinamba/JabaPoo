@@ -5,17 +5,16 @@ import java.util.List;
 
 public class Aplicação {
     public static void main (String [] args){
-        List<String> lista = new ArrayList<String>();
+        List<String> lista = new ArrayList<>();
 
         lista.add("Carlos");
         lista.add("Marcos");
         lista.add("Max");
-        lista.add("David");
+        lista.add(1, "David");
         lista.add("Bob");
 
-        for( String x : lista){
-        System.out.println(lista.contains("Marcos"));  // teste
-        }
+        System.out.println(lista.indexOf("Marcos"));   // retorna o local do elemento pesquisado. caso false = -1
+
 
 
 
