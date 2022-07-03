@@ -1,61 +1,48 @@
-import java.util.List;
 
 public class Processo {
-    private int id;
-    private String nome;
-    private double salario;
-    private double porcentagem;
+
+    private Integer id;
+    private String name;
+    private Double salary;
 
     public Processo() {
-
     }
 
-    public Processo(int id, String nome, double salario) {
+    public Processo(int id, String name, double salary) {
         this.id = id;
-        this.nome = nome;
-        this.salario = salario;
+        this.name = name;
+        this.salary = salary;
     }
 
-    public void aumentoSalario(){
-        
-    }
-
-    @Override
-    public String toString() {
-        return "Id: " + getId() + '\n' +
-                "Nome: " + getNome() + '\n' +
-                "Salario: " + getSalario();
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getSalario() {
-        return salario;
+    public Double getSalary() {
+        return salary;
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
+    public void setSalary(Double salary) {
+        this.salary = salary;
     }
 
-    public double getPorcentagem() {
-        return porcentagem;
+    public void increaseSalary(double percentage) {
+        salary += salary * percentage / 100.0;
     }
 
-    public void setPorcentagem(double porcentagem) {
-        this.porcentagem = porcentagem;
+    public String toString() {
+        return "Id: " +id + ", " + name + ", " + String.format("%.2f", salary);
     }
 }
