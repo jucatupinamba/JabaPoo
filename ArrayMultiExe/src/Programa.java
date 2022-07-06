@@ -14,21 +14,21 @@ public class Programa {
         int linha, coluna;
 
         System.out.print("Digite quanta linhas deseja na lista: ");
-        linha = scan.nextInt();
+        coluna = scan.nextInt();
 
         System.out.print("Digite quanta colunas deseja na lista: ");
-        coluna = scan.nextInt();
-        int [][] array = new int [linha][coluna];
+        linha = scan.nextInt();
+        int [][] array = new int [linha][coluna];   // descobrir porque o array não aceita colunas e linhas !=
 
-        for(int i = 0; i < coluna; i++){
+        for(int i = 0; i < coluna; i++){         //captação de dados usando recurso Random
             for(int j = 0; j < linha; j++){
-                array [i][j] = random.nextInt(100);
+                array [i][j] = random.nextInt(10);
             }
         }
 
-        for (int[] i: array) { //para cada linha da matriz M
-            for (int j : i) { //pegue a coluna desta linhaM
-                System.out.print(j + " "); //imprima esta coluna
+        for (int[] i: array) {                  // for each, impressão do array bidimensional
+            for (int j : i) {
+                System.out.print(j + " ");
             }
             System.out.println(); //pular uma linha
         }
@@ -36,12 +36,22 @@ public class Programa {
         System.out.print("Digite o número que deseja executar: ");
         int num = scan.nextInt();
 
-        for (int[] i: array) { //criar uma lógica que identifica os números ao lado do número selecionado
-            for (int j : i) {
-                if(j == num){
-
-                    System.out.print("Número digitado" + j + " "); //imprima esta coluna
-                    //System.out.print("Coluna anterior " + colunas);
+        for (int i = 0; i < array.length; i++) {                   //lógica de manipulação de arrays
+            for (int j = 0; j < array.length; j++) {
+                if(array[i][j] == num){
+                    System.out.println("Posição " + i + "," + j + ":");
+                    if(j > 0){
+                        System.out.println("Esquerda: " + array[i][j-1]);   //linha -1 = posição á esquerda
+                   }
+                    if(i > 0){
+                        System.out.println("Acima: " + array[i-1][j]);      //coluna -1 = posição acima
+                    }
+                    if(j < array[i].length -1){
+                        System.out.println("Direita: " + array[i][j+1]);     //linha + 1 = posição à direita
+                    }
+                    if(i < array[j].length -1){
+                        System.out.println("Abaixo: " + array[i+1][j]);      // coluna + 1 = posição abaixo
+                    }
                 }
 
             }
