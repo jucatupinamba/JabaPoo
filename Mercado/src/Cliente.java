@@ -49,7 +49,7 @@ public final class Cliente extends Produto {      //Classe filha de Produto
                 "\n Produto: " + ch.getNome() + "\n" +
                 "Tipo: " + ch.getTipo() + '\n' +
                 "Quantidade: " + bf.getQuantidade() + '\n' +
-                "Total: R$ " + setPreco(bf.conta() + ch.conta());
+                "Total Gasto: R$ " + setPreco(bf.conta() + ch.conta());
 
     }
 
