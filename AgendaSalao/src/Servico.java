@@ -3,7 +3,7 @@ public class Servico extends Cliente{
     private double tempo; // pesquisar import
     private double valor; //pesquisar import
 
-    public Servico(String nome, double tempo, double valor) {
+    public Servico() {
         super();
         this.tipo = tipo;
         this.tempo = tempo;

@@ -3,7 +3,7 @@ public class Agendamento extends Servico{
     private double horario;                //Pesquisar import time
 
     public Agendamento() {
-        super(getTipo(), tempo, valor);
+        super();
         this.calendario = calendario;
         this.horario = horario;
     }
@@ -26,10 +26,10 @@ public class Agendamento extends Servico{
 
     @Override
     public String toString() {
-        return "Agendamento: " +
-                "Nome: " + getNome() +
-                "Telefone: " + getTelefone() +
-                "Data: " + calendario +
+        return "Agendamento: " + '\n' +
+                "Nome: " + getNome() + '\n' +
+                "Telefone: " + getTelefone() + '\n' +
+                "Data: " + calendario + '\n' +
                 "Horario: " + horario;
     }
 }
