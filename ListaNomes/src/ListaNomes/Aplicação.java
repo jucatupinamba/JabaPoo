@@ -35,6 +35,8 @@ public class Aplicação {
         }
         System.out.println("Nome " + " encontrado " + b + " vezes, " + c + " nomes não compativeis.");
         System.out.println("Em uma lista de " + lista.size() + " nomes");
+        System.out.println("Nome Marcos encontra-se na lista ? - " + lista.contains("Marcos"));
+            // acima outro método booleano de pesquisa
 
     }
 
