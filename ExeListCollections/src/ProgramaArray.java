@@ -14,22 +14,30 @@ import java.util.List;
 
 public class ProgramaArray {
     public static void main(String[] args) {
-        List<Double> lista = new ArrayList<>();
+        List<Calculo> lista = new ArrayList<>(){{
+            add(new Calculo(30.1d, "Janeiro"));
+            add(new Calculo(28.5d, "Fevereiro"));
+            add(new Calculo(29.1d, "Março"));
+            add(new Calculo(25.4d, "Abril"));
+            add(new Calculo(26.7d, "Maio"));
+            add(new Calculo(24.6d, "Junho"));
+        }};
 
-        lista.add(29.5d);
-        lista.add(30.0d);
-        lista.add(27.4d);
-        lista.add(25.8d);
-        lista.add(28.0d);
-        lista.add(23.2d);
 
-        Iterator<Double> iterator = lista.iterator();
+        Iterator<Calculo> iterator = lista.iterator();
 
-        Double soma = 0d;
+        Object soma = 0;         //modificar lógica double não soma com objeto
         while (iterator.hasNext()) {            //hasNext(true or false) - enqto tiver lista
-            Double next = iterator.next();      //capta o dado do array e passa a variavel next
+            Object next = iterator.next();      //capta o dado do array e passa a variavel next
             soma += next;                       //passa o valor da variavel next para a soma - somando.
         }
-        System.out.printf("A média de temperatura do semestre é : %.2fºC", soma/lista.size());
+
+        Double media = soma/lista.size();       //Calculando a média da temperatura
+        Calculo calc = new Calculo(media);      //Passando a média para outro construtor
+
+        System.out.printf("A média de temperatura do semestre é : %.2fºC", media);
+
+
+
     }
 }
