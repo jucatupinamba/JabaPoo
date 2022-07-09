@@ -7,22 +7,16 @@ import java.util.Scanner;
 
 public class Aplicação {
     public static void main (String [] args) {
-        List<String> lista = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
-        Processo pr = new Processo();
-
-
+        List<String> lista = new ArrayList<>(){{
+            add("Carlos");
+            add("Marcos");
+            add(1, "David");        //add em array especifico
+            add("Juca");
+            add("Marcos");
+            add("Maria");
+            add("Luiza");
+        }};
         int b = 0, c = 0;
-        String nome;
-
-        lista.add("Carlos");
-        lista.add("Marcos");
-        lista.add("Max");
-        lista.add(1, "David");
-        lista.add("Bob");
-        lista.add("Marcos");
-        lista.add("Donna");
-
 
         System.out.println(lista.indexOf("Marcos"));   // retorna o local do elemento pesquisado. caso false = -1
         lista.set(4, "Luffy");     //Troca a string fazendo referência à posição do array
