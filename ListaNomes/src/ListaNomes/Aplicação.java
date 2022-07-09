@@ -1,6 +1,7 @@
 package ListaNomes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -37,6 +38,9 @@ public class Aplicação {
         System.out.println("Em uma lista de " + lista.size() + " nomes");
         System.out.println("Nome Marcos encontra-se na lista ? - " + lista.contains("Marcos"));
             // acima outro método booleano de pesquisa
+
+        Collections.sort(lista);       //Ação para ordenar a lista, no caso, ordem alfabética
+        System.out.println(lista);
 
     }
 
