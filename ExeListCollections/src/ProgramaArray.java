@@ -14,6 +14,7 @@ import java.util.List;
 
 public class ProgramaArray {
     public static void main(String[] args) {
+
         List<Calculo> lista = new ArrayList<>(){{
             add(new Calculo(30.1d, "Janeiro"));
             add(new Calculo(28.5d, "Fevereiro"));
@@ -23,21 +24,21 @@ public class ProgramaArray {
             add(new Calculo(24.6d, "Junho"));
         }};
 
-
-        Iterator<Calculo> iterator = lista.iterator();
-
-        Object soma = 0;         //modificar lógica double não soma com objeto
-        while (iterator.hasNext()) {            //hasNext(true or false) - enqto tiver lista
-            Object next = iterator.next();      //capta o dado do array e passa a variavel next
-            soma += next;                       //passa o valor da variavel next para a soma - somando.
+        double soma = 0;
+        for(int i = 0; i < lista.size(); i++){              //lógica para somar todas as temperaturas do período
+            soma += lista.get(i).getTemperatura();
         }
 
-        Double media = soma/lista.size();       //Calculando a média da temperatura
-        Calculo calc = new Calculo(media);      //Passando a média para outro construtor
+        double media = soma/lista.size();                   //cálculo da média de temperatura do período
+        System.out.printf("A média de temperatura no período foi de %.2f%n", media);
 
-        System.out.printf("A média de temperatura do semestre é : %.2fºC", media);
-
-
-
+        System.out.println("Os meses que tiveram temperatura acima da média foram: ");
+        for(int i=0; i < lista.size(); i++) {               //laço com lógica para impressão de condicionais
+                if (lista.get(i).getTemperatura() > media) {    //lógica para condicional de temperatura acima da média
+                System.out.println(lista.get(i).toString());
+            }
+        }
     }
+
+
 }
