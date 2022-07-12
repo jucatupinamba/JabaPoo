@@ -1,4 +1,8 @@
 package ListaNomes;
+/*
+Criar um programa onde, ao informar um nome, ele deve pesquisar em uma lista já existente o nome informado.
+Ele deve retornar uma msg dizendo se foi encontrado ou não o nome nessa lista.
+ */
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,36 +11,30 @@ import java.util.Scanner;
 
 public class Aplicação {
     public static void main (String [] args) {
-        List<String> lista = new ArrayList<>(){{
+
+        Processo processo = new Processo();
+        Scanner scan = new Scanner(System.in);
+        List<String> lista = new ArrayList<>(){{        //inicialização da lista
             add("Carlos");
             add("Marcos");
             add(1, "David");        //add em array especifico
             add("Juca");
-            add("Marcos");
+            add("Teepo");
             add("Maria");
             add("Luiza");
         }};
-        int b = 0, c = 0;
 
-        System.out.println(lista.indexOf("Marcos"));   // retorna o local do elemento pesquisado. caso false = -1
-        lista.set(4, "Luffy");     //Troca a string fazendo referência à posição do array
+       System.out.println("Digite o nome a pesquisar: ");
+       processo.setNome(scan.nextLine());
 
-        for (String x : lista) {
-            if (x == "Marcos") {
-                b++;
-            } else {
-                c++;
-            }
-        }
-        System.out.println("Nome " + " encontrado " + b + " vezes, " + c + " nomes não compativeis.");
-        System.out.println("Em uma lista de " + lista.size() + " nomes");
-        System.out.println("Nome Marcos encontra-se na lista ? - " + lista.contains("Marcos"));
-            // acima outro método booleano de pesquisa
-
-        Collections.sort(lista);       //Ação para ordenar a lista, no caso, ordem alfabética
-        System.out.println(lista);
-
+       for(int i = 0; i < lista.size(); i++){                  //laço para percorrer a lista
+           if(lista.get(i).equals(processo.getNome())){         //lógica booleana para pesquisa do nome
+               System.out.println("Nome " + processo.getNome() + " encontrado com sucesso.");   //saída de dados
+           }
+           else{
+               System.out.println("Nome pesquisado não encontrado.");               //saída de dados
+           }
+       }
     }
-
 }
 
