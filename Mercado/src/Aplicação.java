@@ -17,21 +17,16 @@ public class Aplicação {
 
         Churrasco chu[] = new Churrasco[2];
 
+
+        // objetos com diferentes atributos
         chu[0] = new Churrasco("Espetinho", "Carne", 10.00f,"Assado", 1);
         chu[1] = new Churrasco("Pedaço", "Frango", 5.00f, "Assado", 1);
 
         Buffet b[] = new Buffet[1];
 
-        b[0] = new Buffet("Buffet Livre", "Alimentos em Geral", 18.50f,"Auto Atendimento", 1 );
-
-        c[2].pedidoBuffet(b[0]);                       //testando as funcionalidades
-       c[2].novoPedidoBuffet(b[0]);
-       c[2].pedidoChurras(chu[0]);
+        b[0] = new Buffet("Buffet Livre",  18.50f,"Auto Atendimento", 1 );
 
 
-       c[1].pedidoChurras(chu[1]);
-       c[1].novoPedidoBuffet(b[0]);
 
-       // System.out.println(c[0].pedidoChurras(chu[1]));
     }
 }

@@ -3,23 +3,25 @@ public class Buffet extends Alimentos {        /*Classe filha de Alimentos
                                                   como metodos getNome, setTipo da superclasse Produto.
                                                    */
     private int quantidade;
-    private boolean taxaDesperdicio;
+
         //Método Construtor
-    public Buffet(String nome, String tipo, double preco, String servir, int quantidade){
-        setNome(nome);
-        setTipo(tipo);
-        setPreco(preco);
+    public Buffet(String nome, double preco, String servir, int quantidade){
+        this.nome = nome;
+        this.preco = preco;
         setServir(servir);
-        setQuantidade(quantidade);
+        this.quantidade = quantidade;
     }
-
-    public void novoPedido(){
-        getNome();
-        getTipo();
-        getPreco();
+    @Override
+    public void fazerPedido(){
         setQuantidade(quantidade + 1);
+        setPreco(getPreco());
     }
-
+    public String pedido() {
+        return "Produto" + "\n" +
+                "Nome: " + getNome() + '\n' +
+                "Quantidade: " + getQuantidade() + '\n' +
+                "Preço: " + getPreco() + '\n';
+    }
     public double conta(){
         return setPreco(getQuantidade() * getPreco());
     }
@@ -30,24 +32,5 @@ public class Buffet extends Alimentos {        /*Classe filha de Alimentos
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
-    }
-
-    public boolean isTaxaDesperdicio() {
-        return taxaDesperdicio;
-    }
-
-    public void setTaxaDesperdicio(boolean taxaDesperdicio) {
-        if (isTaxaDesperdicio()){
-            setPreco(getPreco() + 20);
-        }
-        this.taxaDesperdicio = taxaDesperdicio;
-    }
-
-    public String pedido() {
-        return "Produto" + "\n" +
-                "Nome: " + getNome() + '\n' +
-                "Tipo: " + getTipo() + '\n' +
-                "Quantidade: " + getQuantidade() + '\n' +
-                "Preço: " + getPreco() + '\n';
     }
 }

@@ -18,10 +18,9 @@ public final class Cliente extends Produto {      //Classe filha de Produto
                 bf.pedido();
     }
 
-    public void novoPedidoBuffet(Buffet buffet){
+    public void fazerPedido(Buffet buffet, Churrasco churras){
         buffet.setQuantidade(buffet.getQuantidade() + 1);
-        buffet.setPreco(buffet.getPreco() * buffet.getQuantidade());
-        buffet.novoPedido();
+        churras.setQuantidade(buffet.getQuantidade() + 1);
     }
 
     public String cardapio(Churrasco churras){                  //Método para cardápio do churrasco;
@@ -31,7 +30,12 @@ public final class Cliente extends Produto {      //Classe filha de Produto
                 "Servir: " + churras.getServir() + '\n' +
                 "Quantidade: " + churras.getQuantidade();
     }
+    public String fecharContaChurras(Buffet buffet){     //Método fechar conta do Churrasco
+        return "Nome: " + getNome() + '\n' +
+                "Quantidade: " + buffet.getQuantidade() + '\n' +
+                "Total: " + buffet.getPreco();
 
+    }
     public String fecharContaChurras(Churrasco ch){     //Método fechar conta do Churrasco
         return "Nome: " + getNome() + '\n' +
                 "Tipo: " + ch.getTipo() + '\n' +
@@ -44,12 +48,11 @@ public final class Cliente extends Produto {      //Classe filha de Produto
         return "Nome: " + getNome() + '\n' +
                 "Mesa: " + getMesa() + '\n' +
                 "Produto: " + bf.getNome() + "\n" +
-                "Tipo: " + bf.getTipo() + '\n' +
                 "Quantidade: " + bf.getQuantidade() + '\n' +
                 "\n Produto: " + ch.getNome() + "\n" +
                 "Tipo: " + ch.getTipo() + '\n' +
                 "Quantidade: " + bf.getQuantidade() + '\n' +
-                "Total Gasto: R$ " + setPreco(bf.conta() + ch.conta());
+                "Total Gasto: R$ " + setPreco(bf.conta() + ch.conta());  //modificando pela superclasse - preço final
 
     }
 

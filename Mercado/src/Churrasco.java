@@ -1,27 +1,32 @@
 public class Churrasco extends Alimentos{
     private int quantidade;
-
+    private String tipo;
+    //# MÉTODO CONSTRUTOR - pode definir o estado inicial do objeto
     public Churrasco(String nome, String tipo, double preco, String servir, int quantidade){
-        setNome(nome);
-        setTipo(tipo);
-        setPreco(preco);
+        this.nome = nome;
+        this.tipo = tipo;
+        this.preco = preco;
         setServir(servir);
-        setQuantidade(quantidade);
+        this.quantidade = quantidade;
     }
-
-    public void fazerPedido(Buffet buffet){                   //abaixo exemplo de polimorfismo de sobrecarga
-           buffet.setQuantidade(getQuantidade() + 1);  //adiciona um item ao pedido Buffet
+    @Override
+    public void fazerPedido(){
+           setQuantidade(getQuantidade() + 1);
     }
-    public void fazerPedido(int quantidade) {
-        setQuantidade(getQuantidade() + 1);          //adiciona um item ao pedido churrasco
-    }
-
     public int getQuantidade() {
         return quantidade;
     }
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public double conta(){

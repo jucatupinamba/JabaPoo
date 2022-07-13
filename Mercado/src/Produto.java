@@ -4,8 +4,7 @@ public abstract class Produto {         /*  Classe abstrata; superclasse que nã
                                             A relação de Herança é explícita na importação dos métodos da superclasse
                                             pelas subclasses relacionadas.*/
     public String nome;
-    public String tipo;
-     public double preco;
+    public double preco;
 
     public String getNome() {          //Nome pode ser utilizado tanto para Cliente quanto Alimentos
         return nome;
@@ -15,14 +14,8 @@ public abstract class Produto {         /*  Classe abstrata; superclasse que nã
         this.nome = nome;
     }
 
-    public String getTipo() {           //Mesmo conceito acima utilizado em todos os seus métodos
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
+    public void fazerPedido(){};
+    public double conta(){return 0;};
     public double getPreco() {
         return preco;
     }
