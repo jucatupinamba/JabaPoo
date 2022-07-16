@@ -1,14 +1,22 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 //Programa em produção, para trabalhar os conceitos de POO
 //Projeto pessoal
 public class ProgramKBeauty {
     public static void main (String [] args){
-
+       Scanner scan = new Scanner(System.in);
        Agendamento a1 = new Agendamento();
-       a1.setNome("Marcia");
-       a1.setTelefone(33224499);
-       a1.setCalendario(12);
-       a1.setHorario(12.45);
-       System.out.println(a1.toString());
+       List<Cliente> cliente = new ArrayList<>();
 
+       System.out.println("Digite o nome e telefone da cliente que deseja cadastrar: ");
+       System.out.println("Digite END caso deseje encerrar a lista");
+
+       for(int i = 0; i <= cliente.size(); i++){
+           if(!scan.hasNext("END")){
+               cliente.add(new Cliente(scan.nextLine(), scan.nextInt()));
+           }
+       }
     }
 }

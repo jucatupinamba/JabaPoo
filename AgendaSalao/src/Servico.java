@@ -4,7 +4,7 @@ public class Servico extends Cliente{
     private double valor; //pesquisar import
 
     public Servico() {
-        super();
+        super(scan.nextLine(), scan.nextInt());
         this.tipo = tipo;
         this.tempo = tempo;
         this.valor = valor;
