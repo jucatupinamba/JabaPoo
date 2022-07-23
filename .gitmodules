@@ -1,3 +1,6 @@
 [submodule "treinamentoJava/curso_programacao/src"]
 	path = treinamentoJava/curso_programacao/src
 	url = https://github.com/jucatupinamba/exercicios-java
+[submodule "curso-dio-intro-collections"]
+	path = curso-dio-intro-collections
+	url = git@github.com:cami-la/curso-dio-intro-collections.git
