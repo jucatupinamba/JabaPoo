@@ -9,6 +9,7 @@ public class ProgramKBeauty {
        Scanner scan = new Scanner(System.in);
        Agendamento a1 = new Agendamento();
        List<Cliente> cliente = new ArrayList<>();
+       List<Servico> servico = new ArrayList<>();
 
        System.out.println("Digite o nome e telefone da cliente que deseja cadastrar: ");
        System.out.println("Digite END caso deseje encerrar a lista");
@@ -18,5 +19,19 @@ public class ProgramKBeauty {
                cliente.add(new Cliente(scan.nextLine(), scan.nextInt()));
            }
        }
+
+       System.out.println("Qual serviço deseja cadastrar? \n 1 - Cabelo \n 2 - Unha");
+       int serv = 0;
+       if(serv == 1){
+
+       }
+       if(serv == 2){
+
+       }
+       else{
+           System.out.println("Número inválido");
+       }
+
+
     }
 }
