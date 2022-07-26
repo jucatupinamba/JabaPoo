@@ -11,10 +11,10 @@ public class ProgramKBeauty {
        List<Cliente> cliente = new ArrayList<>();
 
        System.out.println("Digite o nome e telefone da cliente que deseja cadastrar: ");
-       System.out.println("Digite END caso deseje encerrar a lista");
+       System.out.println("Digite 0 caso deseje encerrar a lista");
 
        for(int i = 0; i <= cliente.size(); i++){
-           if(!scan.hasNext("END")){
+           if(!scan.hasNextInt()){
                cliente.add(new Cliente(scan.nextLine(), scan.nextInt()));
            }
        }
